@@ -1,0 +1,6 @@
+schema_exists=0
+schema_name=football_admin_phase5_tx_20261017
+triggers_before_cleanup=0
+test_fixture_state=application 0; team_member 0; notification 0; match 4; match_result 2
+football_admin_counts_and_selected_indexes=unchanged
+Phase 2/3/4 evidence preserved

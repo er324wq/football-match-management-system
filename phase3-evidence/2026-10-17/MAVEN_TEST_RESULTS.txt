@@ -1,0 +1,8 @@
+Command: mvn -f backend/pom.xml -Dphase3.db.integration=true test -q
+Runtime: JDK 8; Spring Boot 2.7.18; MySQL localhost:3306; SPRING_DATASOURCE_URL pointed to football_admin_phase3_it_20261017
+Database test profile: opt-in system property enabled; writes in FootballDatabaseIntegrationTest are inside @Transactional tests
+Result: 24 tests; failures=0; errors=0; skipped=0
+Suites: MatchControllerTest 5/5; FootballDatabaseIntegrationTest 5/5; GoalRecordServiceTest 1/1; SecurityIntegrationTest 11/11; UserServiceLoginTest 2/2
+Coverage: match-result synchronization unit behavior; submitted goal minute persistence; standings/scorer SQL; unique/FK constraints; auth and write authorization; goal-time input validation
+Business database: read-only during tests; after test counts user=3, team=4, player=8, match=4, match_result=2, goal_record=5; original match_result indices present
+Cleanup: football_admin_phase3_it_20261017 dropped by cleanup_phase3_schema.ps1; information_schema verification returned 0

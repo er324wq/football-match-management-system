@@ -1,0 +1,6 @@
+Migration target: football_admin
+Source migrated: football_match
+Source checked (empty): database football_db
+Inserted: team=3, player=10, match=3, user=2
+Matched existing user=1
+Validation: orphan_player_team=0, orphan_match_home=0, orphan_match_away=0

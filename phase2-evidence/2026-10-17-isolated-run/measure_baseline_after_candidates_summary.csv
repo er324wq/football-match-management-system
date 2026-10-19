@@ -1,0 +1,4 @@
+﻿"label","query","samples","median_server_ms","p95_nearest_rank_server_ms","min_server_ms","max_server_ms"
+"baseline_after_candidates","match_page","20","0.0824","0.113","0.0745","0.136"
+"baseline_after_candidates","top_scorers","20","372.5","448","349","543"
+"baseline_after_candidates","standings","20","154.5","176","147","188"

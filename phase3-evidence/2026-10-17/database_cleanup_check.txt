@@ -1,0 +1,9 @@
+db_name	users	teams	players	matches	results	goals
+business	3	4	8	4	2	5
+db_name	users	teams	players	matches	results	goals
+test	3	4	8	4	2	5
+INDEX_NAME	COLUMN_NAME	NON_UNIQUE
+idx_match_id	match_id	1
+PRIMARY	id	0
+uk_match_id	match_id	0
+Cleanup: DROP DATABASE football_admin_phase3_it_20261017; remaining schema count=0

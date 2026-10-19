@@ -1,0 +1,4 @@
+﻿"label","query","samples","median_server_ms","p95_nearest_rank_server_ms","min_server_ms","max_server_ms"
+"baseline_dup","match_page","20","0.0955","0.14","0.0727","0.329"
+"baseline_dup","top_scorers","20","329","365","314","367"
+"baseline_dup","standings","20","153.5","170","135","177"

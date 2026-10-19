@@ -1,0 +1,23 @@
+version	version_comment	current_database
+26.7.0	MySQL Community Server - GPL	football_admin
+table_name	exact_rows
+user	3
+team	4
+player	8
+match	4
+match_result	2
+goal_record	5
+Table	Non_unique	Key_name	Seq_in_index	Column_name	Collation	Cardinality	Sub_part	Packed	Null	Index_type	Comment	Index_comment	Visible	Expression
+match	0	PRIMARY	1	id	A	4	NULL	NULL		BTREE			YES	NULL
+match	1	idx_match_time	1	match_time	A	4	NULL	NULL		BTREE			YES	NULL
+match	1	idx_home_team	1	home_team_id	A	3	NULL	NULL		BTREE			YES	NULL
+match	1	idx_away_team	1	away_team_id	A	3	NULL	NULL		BTREE			YES	NULL
+match	1	idx_status	1	status	A	2	NULL	NULL	YES	BTREE			YES	NULL
+Table	Non_unique	Key_name	Seq_in_index	Column_name	Collation	Cardinality	Sub_part	Packed	Null	Index_type	Comment	Index_comment	Visible	Expression
+match_result	0	PRIMARY	1	id	A	2	NULL	NULL		BTREE			YES	NULL
+match_result	0	uk_match_id	1	match_id	A	2	NULL	NULL		BTREE			YES	NULL
+match_result	1	idx_match_id	1	match_id	A	2	NULL	NULL		BTREE			YES	NULL
+Table	Non_unique	Key_name	Seq_in_index	Column_name	Collation	Cardinality	Sub_part	Packed	Null	Index_type	Comment	Index_comment	Visible	Expression
+goal_record	0	PRIMARY	1	id	A	5	NULL	NULL		BTREE			YES	NULL
+goal_record	1	idx_match_id	1	match_id	A	2	NULL	NULL		BTREE			YES	NULL
+goal_record	1	idx_player_id	1	player_id	A	5	NULL	NULL		BTREE			YES	NULL

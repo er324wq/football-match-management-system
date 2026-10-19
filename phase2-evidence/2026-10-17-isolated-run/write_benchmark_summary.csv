@@ -1,0 +1,3 @@
+"variant","samples","rows_per_sample","median_ms","p95_nearest_rank_ms","min_ms","max_ms"
+"dup","10","13000","303.914","341.917","279.091","341.917"
+"unique","10","13000","278.499","293.992","233.797","293.992"

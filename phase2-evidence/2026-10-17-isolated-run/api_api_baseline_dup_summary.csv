@@ -1,0 +1,4 @@
+﻿"label","query","samples","median_client_ms","p95_nearest_rank_client_ms","min_ms","max_ms","errors","rows","response_bytes"
+"api_baseline_dup","match_page","20","9.247","10.893","8.086","17.67","0","10","3562"
+"api_baseline_dup","top_scorers","20","355.341","393.024","332.92","460.524","0","12160","1132521"
+"api_baseline_dup","standings","20","139.016","152.227","133.716","162.962","0","128","19573"

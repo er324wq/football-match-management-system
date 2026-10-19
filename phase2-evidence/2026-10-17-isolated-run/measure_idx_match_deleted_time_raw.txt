@@ -1,0 +1,230 @@
+
+### query=match_page sample=1 warmup=True
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.638..0.818 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.637..0.816 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.628..0.795 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.624..0.783 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.615..0.759 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00198..0.00201 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=0.00101..0.00104 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00187..0.00187 rows=0 loops=10)
+
+### query=match_page sample=2 warmup=True
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.287..0.32 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.287..0.319 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.278..0.3 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.274..0.288 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.264..0.268 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.0016..0.00162 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=0.00103..0.00105 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00162..0.00162 rows=0 loops=10)
+
+### query=match_page sample=3 warmup=True
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.273..0.306 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.272..0.305 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.263..0.285 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.26..0.273 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.254..0.257 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00138..0.00141 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=0.00103..0.00105 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00174..0.00174 rows=0 loops=10)
+
+### query=match_page sample=4 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.195..0.222 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.194..0.22 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.188..0.205 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.185..0.195 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.179..0.181 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00116..0.00117 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=880e-6..910e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00132..0.00132 rows=0 loops=10)
+
+### query=match_page sample=5 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.277..0.303 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.276..0.301 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.27..0.287 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.267..0.277 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.26..0.263 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00121..0.00125 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=800e-6..820e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00124..0.00124 rows=0 loops=10)
+
+### query=match_page sample=6 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.235..0.261 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.234..0.259 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.226..0.243 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.223..0.233 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.216..0.219 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00123..0.00124 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=830e-6..850e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00151..0.00151 rows=0 loops=10)
+
+### query=match_page sample=7 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.229..0.261 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.228..0.259 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.222..0.243 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.22..0.232 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.214..0.217 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00128..0.00131 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=880e-6..880e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00144..0.00144 rows=0 loops=10)
+
+### query=match_page sample=8 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.248..0.276 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.248..0.275 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.241..0.259 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.238..0.249 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.231..0.233 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00127..0.00129 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=860e-6..880e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00135..0.00135 rows=0 loops=10)
+
+### query=match_page sample=9 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.343..0.379 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.342..0.377 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.333..0.356 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.328..0.342 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.32..0.324 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00161..0.00163 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=0.00123..0.00125 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00188..0.00188 rows=0 loops=10)
+
+### query=match_page sample=10 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.238..0.272 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.237..0.271 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.231..0.254 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.229..0.242 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.222..0.226 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00143..0.00147 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=980e-6..0.00102 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00143..0.00143 rows=0 loops=10)
+
+### query=match_page sample=11 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.192..0.219 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.192..0.218 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.186..0.204 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.184..0.195 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.178..0.181 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.0012..0.00121 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=800e-6..830e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.0012..0.0012 rows=0 loops=10)
+
+### query=match_page sample=12 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.175..0.2 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.173..0.198 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.167..0.185 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.165..0.175 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.16..0.162 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.0011..0.0011 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=800e-6..820e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00123..0.00123 rows=0 loops=10)
+
+### query=match_page sample=13 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.225..0.258 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.225..0.256 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.211..0.233 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.208..0.221 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.2..0.204 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00147..0.00148 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=970e-6..0.001 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00213..0.00213 rows=0 loops=10)
+
+### query=match_page sample=14 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.192..0.218 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.192..0.217 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.181..0.199 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.179..0.189 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.173..0.176 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00122..0.00123 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=750e-6..760e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00168..0.00168 rows=0 loops=10)
+
+### query=match_page sample=15 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.195..0.22 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.195..0.219 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.188..0.205 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.185..0.195 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.18..0.182 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00113..0.00115 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=800e-6..830e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00126..0.00126 rows=0 loops=10)
+
+### query=match_page sample=16 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.28..0.314 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.28..0.312 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.27..0.293 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.267..0.28 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.258..0.261 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00165..0.00166 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=0.00112..0.00115 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00183..0.00183 rows=0 loops=10)
+
+### query=match_page sample=17 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.209..0.311 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.208..0.309 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.201..0.287 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.198..0.273 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.191..0.195 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00759..0.00761 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=0.0012..0.00123 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00185..0.00185 rows=0 loops=10)
+
+### query=match_page sample=18 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.305..0.344 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.305..0.342 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.294..0.32 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.288..0.303 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.278..0.282 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.0018..0.00183 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=0.00149..0.0015 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00208..0.00208 rows=0 loops=10)
+
+### query=match_page sample=19 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.199..0.226 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.199..0.224 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.193..0.21 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.191..0.201 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.185..0.188 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00118..0.00119 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=740e-6..750e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00119..0.00119 rows=0 loops=10)
+
+### query=match_page sample=20 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.182..0.208 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.181..0.207 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.175..0.193 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.173..0.184 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.167..0.17 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.0012..0.00123 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=770e-6..810e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00122..0.00122 rows=0 loops=10)
+
+### query=match_page sample=21 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.292..0.33 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.291..0.329 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.282..0.308 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.278..0.293 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.269..0.273 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00171..0.00172 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=0.00133..0.00135 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00183..0.00183 rows=0 loops=10)
+
+### query=match_page sample=22 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.287..0.322 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.287..0.321 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.278..0.301 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.273..0.287 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.264..0.267 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00172..0.00172 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=0.00124..0.00126 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00172..0.00172 rows=0 loops=10)
+
+### query=match_page sample=23 warmup=False
+-> Limit: 10 row(s)  (cost=11313 rows=10) (actual time=0.209..0.242 rows=10 loops=1)
+    -> Nested loop left join  (cost=11313 rows=9732) (actual time=0.209..0.24 rows=10 loops=1)
+        -> Nested loop left join  (cost=7906 rows=9732) (actual time=0.203..0.224 rows=10 loops=1)
+            -> Nested loop left join  (cost=4500 rows=9732) (actual time=0.2..0.213 rows=10 loops=1)
+                -> Index lookup on m using bench_deleted_match_time (deleted = 0) (reverse)  (cost=1094 rows=9732) (actual time=0.193..0.196 rows=10 loops=1)
+                -> Single-row index lookup on ht using PRIMARY (id = m.home_team_id)  (cost=0.25 rows=1) (actual time=0.00141..0.00141 rows=1 loops=10)
+            -> Single-row index lookup on at using PRIMARY (id = m.away_team_id)  (cost=0.25 rows=1) (actual time=950e-6..970e-6 rows=1 loops=10)
+        -> Single-row index lookup on mr using uk_match_id (match_id = m.id)  (cost=0.25 rows=1) (actual time=0.00139..0.00139 rows=0 loops=10)

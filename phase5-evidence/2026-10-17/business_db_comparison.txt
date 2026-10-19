@@ -1,0 +1,1 @@
+Exact core counts and selected index metadata match.

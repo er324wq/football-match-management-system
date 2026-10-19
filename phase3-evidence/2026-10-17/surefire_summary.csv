@@ -1,0 +1,6 @@
+"Suite","Summary"
+"com.football.controller.MatchControllerTest","Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.696 s - in com.football.controller.MatchControllerTest"
+"com.football.integration.FootballDatabaseIntegrationTest","Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.55 s - in com.football.integration.FootballDatabaseIntegrationTest"
+"com.football.security.SecurityIntegrationTest","Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.001 s - in com.football.security.SecurityIntegrationTest"
+"com.football.service.GoalRecordServiceTest","Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in com.football.service.GoalRecordServiceTest"
+"com.football.service.UserServiceLoginTest","Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in com.football.service.UserServiceLoginTest"

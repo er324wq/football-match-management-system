@@ -1,0 +1,4 @@
+Final cleanup command: phase3-evidence/2026-10-17/cleanup_phase3_schema.ps1
+Result: exact disposable schema football_admin_phase3_it_20261017 dropped; metadata query returned 0.
+Final test result: 24 tests, 0 failures, 0 errors, 0 skipped; see MAVEN_TEST_RESULTS.txt and backend/target/surefire-reports/
+Business database core counts and match_result indices match the before-test check in database_cleanup_check.txt.

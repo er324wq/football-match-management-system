@@ -1,0 +1,5 @@
+Before snapshot integrity: 19/19 files match SHA-256.
+After snapshot integrity: 22/22 files match SHA-256.
+Phase 4 TRANSACTION_EXPERIMENT.md hash matches the Phase 5 before manifest.
+New API exception handler, not-found exception, and Phase 5 test class had no pre-change version and are saved in after snapshot.
+Phase 2/3/4 evidence artifacts were not overwritten.

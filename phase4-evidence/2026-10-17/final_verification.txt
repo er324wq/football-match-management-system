@@ -1,0 +1,7 @@
+Phase 4 test schema remaining: 0
+football_admin exact counts: user=3; team=4; player=8; match=4; match_result=2; goal_record=5
+Maven final: 29 tests, 0 failures, 0 errors, 0 skipped
+TransactionalWorkflowIntegrationTest: 5 tests, 0 failures, 0 errors, 0 skipped
+Phase 3 checksum entries matching current files: 37 / 41
+Expected current-file changes: TECHNICAL_AUDIT.md; TECHNICAL_RESULTS.md; RESUME_PROJECT_RESULTS.md; backend/src/test/java/com/football/controller/MatchControllerTest.java
+Phase 3 evidence directory contents remain preserved; see phase3_evidence_preservation_check.csv

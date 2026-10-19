@@ -1,0 +1,4 @@
+schema=football_admin_bench_20261017_a1
+tables=bench_write_dup,bench_write_unique,db_backup,goal_record,match,match_result,operation_log,player,team,user
+DROP DATABASE executed for exact test-only schema.
+remaining_schema_match=

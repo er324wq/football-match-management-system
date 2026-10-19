@@ -1,0 +1,8 @@
+Command: mvn -f backend/pom.xml test -q
+Runtime: JDK 8, bundled Maven
+Exit code: 0
+SecurityIntegrationTest: 9 tests; failures=0, errors=0, skipped=0
+UserServiceLoginTest: 2 tests; failures=0, errors=0, skipped=0
+Surefire reports updated: 2026-10-17 14:05 local time
+App/API experiment process: stopped; port 18091 no longer listening
+Isolated schema: dropped and verified absent

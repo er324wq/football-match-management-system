@@ -1,0 +1,7 @@
+Command: mvn -f backend/pom.xml test -q
+Runtime: JDK 8, bundled Maven
+Exit code: 0
+SecurityIntegrationTest: 9 tests, 9 passed, 0 failures, 0 errors, 0 skipped
+UserServiceLoginTest: 2 tests, 2 passed, 0 failures, 0 errors, 0 skipped
+Surefire reports updated: 2026-10-17 13:43 local time
+Scope: read-only SQL analysis; no Java source changes in Phase 2

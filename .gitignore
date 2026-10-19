@@ -1,0 +1,46 @@
+# Build outputs and downloaded dependencies
+backend/target/
+frontend/node_modules/
+frontend/dist/
+
+# IDE and editor state
+.idea/
+.vscode/
+*.iml
+
+# Local environment and credentials (keep the committed template)
+.env
+.env.*
+!.env.example
+
+# Runtime logs and temporary output
+*.log
+*.tmp
+*.temp
+*.swp
+*.bak
+
+# Local database files and backups
+db_backups/
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.mv.db
+*.h2.db
+
+# Archived before/after snapshots duplicate source and may contain historical
+# local configuration. The phase reports and primary test evidence remain tracked.
+phase[2-5]-evidence/**/before/
+phase[2-5]-evidence/**/after/
+
+# Verbose raw Maven console transcripts contain machine and workspace metadata.
+# Their sanitized results are summarized in phase5-evidence/.../PUBLIC_TEST_RESULTS.md.
+phase4-evidence/2026-10-17/MAVEN_PHASE4_*RESULTS*.txt
+phase5-evidence/2026-10-17/MAVEN_PHASE5_*RESULTS*.txt
+
+# OS-generated files
+Thumbs.db
+Desktop.ini
+.DS_Store

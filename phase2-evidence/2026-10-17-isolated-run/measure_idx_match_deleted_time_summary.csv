@@ -1,0 +1,2 @@
+﻿"label","query","samples","median_server_ms","p95_nearest_rank_server_ms","min_server_ms","max_server_ms"
+"idx_match_deleted_time","match_page","20","0.261","0.344","0.2","0.379"
